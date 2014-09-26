@@ -26,5 +26,9 @@
     "husky": "^0.6.1",
     "jshint-stylish": "^1.0.0",
     "run-sequence": "^0.3.7"
+  },
+  "dependencies": {
+    "moment": "^2.8.3",
+    "request": "^2.44.0"
   }
 }
