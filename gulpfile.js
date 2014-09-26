@@ -1,17 +1,28 @@
+var exec = require('child_process').exec;
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var jshint = require('gulp-jshint');
+
 require('gulp-help')(gulp);
 require('jshint-stylish');
 
-gulp.task('test', 'Run all tests.', function(callback) {
+gulp.task('test', 'Run all tests.', function(cb) {
     runSequence('lint',
                 'test-cucumber',
-                callback);
+                cb);
 });
 
-gulp.task('test-cucumber', 'Run cucumber integration tests.', function() {
-    //Add cucumber call here.
+gulp.task('test-cucumber', 'Run cucumber integration tests.', function(cb) {
+    exec(
+        './node_modules/cucumber/bin/cucumber.js test/*.feature ' +
+        '-r lib/steps/ -r test/steps/ -f pretty',
+        function(err, stdout, stderr) {
+            if (err) {
+                return cb(err);
+            }
+            console.log(stdout);
+            console.log(stderr);
+        });
 });
 
 gulp.task('lint', 'Lint all js files.', function() {
