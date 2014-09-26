@@ -1,0 +1,30 @@
+{
+  "name": "cucumberjs-api-teststeps",
+  "version": "0.1.0",
+  "description": "Common test steps for testing api's.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "precommit": "gulp lint",
+    "prepush": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:icemobilelab/cucumberjs-api-teststeps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icemobilelab/cucumberjs-api-teststeps/issues"
+  },
+  "homepage": "https://github.com/icemobilelab/cucumberjs-api-teststeps",
+  "devDependencies": {
+    "cucumber": "^0.4.4",
+    "gulp": "^3.8.8",
+    "gulp-help": "^1.1.0",
+    "gulp-jshint": "^1.8.4",
+    "husky": "^0.6.1",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^0.3.7"
+  }
+}
