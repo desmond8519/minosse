@@ -15,9 +15,10 @@ gulp.task('test', 'Run all tests.', function(cb) {
 gulp.task('test-cucumber', 'Run cucumber integration tests.', function(cb) {
     exec(
         './node_modules/cucumber/bin/cucumber.js test/*.feature ' +
-        '-r lib/steps/ -r test/steps/ -f pretty',
+        '-r lib/steps/ -r test/steps/ -f pretty -t @only',
         function(err, stdout, stderr) {
             if (err) {
+                console.log(stdout);
                 return cb(err);
             }
             console.log(stdout);
