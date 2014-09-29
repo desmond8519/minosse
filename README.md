@@ -64,3 +64,24 @@ You can also add `the`:
 <hr>
 ##### `DEBUG I eval console.log(this.testConfig);`
 Evaluate any javascript expression with the world object as value for `this`.
+
+## Development
+
+### Style
+We have an `.editorconfig` file to help us having a consistent coding style.
+[Please install a plugin for your editor](http://editorconfig.org/).
+
+We use `jshint` for code linting.
+[There are plugins for that too](http://www.jshint.com/install/).
+
+### Tasks
+We use gulp as a task runner. Install it globally first: `npm install -g gulp`.
+To see a list of gulp commands, run:
+
+    gulp help
+
+### Git hooks
+In the `package.json` you can see a pre-commit and pre-push hook.
+On commiting or pushing these commands are executed.
+If they fail, the commit/push will fail.
+Add the `--no-verify` flag to your commit or push to bypass these checks.
