@@ -2,7 +2,7 @@
   "name": "cucumberjs-api-teststeps",
   "version": "0.1.0",
   "description": "Common test steps for testing api's.",
-  "main": "index.js",
+  "main": "lib/steps.js",
   "scripts": {
     "test": "gulp test",
     "precommit": "gulp lint",
