@@ -1,5 +1,26 @@
 Feature: setting and checking properties
 
+    Scenario Outline: Setting and checking a root property
+        When property <property> is <type> <value>
+        Then check property <property> is <type> <value>
+
+        Examples:
+            | property      | type              | value         |
+            | foo           | string            | word          |
+            | foo           | number            | 4.3           |
+            | foo           | float             | 4.3           |
+            | foo           | int               | 4             |
+            | foo           | boolean           | true          |
+            | foo           | bool              | true          |
+            | foo           | object            | { "nr": 42 }  |
+            | foo           | array             | one,two,three |
+            | foo           | list              | one,two,three |
+            | foo           | date              | 01/11/1989    |
+            | foo           | dateISOString     | 01/11/1989    |
+            | foo.chain     | string            | word          |
+            | foo.array.[1] | string            | word          |
+            | foo           | string            | word          |
+
     Scenario Outline: Setting and checking a property
         When property <property> of <item> is <type> <value>
         Then check property <property> of <item> is <type> <value>
