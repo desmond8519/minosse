@@ -1,9 +1,13 @@
 Feature: making http requests
 
-    Background:
-        Given host name and port are configured
-
     Scenario: I want to make a request
+        Given property foo of request body is string bar
+        When send a POST request to /foo
+        Then the response status code is 200
+        Then check property foo of response body is string bar
+
+    Scenario: I want to make a to a host and port defined in the testConfig
+        Given host name and port are configured
         Given property foo of request body is string bar
         When send a POST request to /foo
         Then the response status code is 200
