@@ -13,8 +13,8 @@ Feature: setting and checking properties
             | foo           | boolean           | true          |
             | foo           | bool              | true          |
             | foo           | object            | { "nr": 42 }  |
-            | foo           | array             | one,two,three |
-            | foo           | list              | one,two,three |
+            | foo           | string-array      | one,two,three |
+            | foo           | number-array      | 1,2,3         |
             | foo           | date              | 01/11/1989    |
             | foo           | dateISOString     | 01/11/1989    |
             | foo.chain     | string            | word          |
@@ -34,8 +34,8 @@ Feature: setting and checking properties
             | foo           | bar       | boolean           | true          |
             | foo           | bar       | bool              | true          |
             | foo           | bar       | object            | { "nr": 42 }  |
-            | foo           | bar       | array             | one,two,three |
-            | foo           | bar       | list              | one,two,three |
+            | foo           | bar       | string-array      | one,two,three |
+            | foo           | bar       | number-array      | 1,2,3         |
             | foo           | bar       | date              | 01/11/1989    |
             | foo           | bar       | dateISOString     | 01/11/1989    |
             | foo.chain     | bar       | string            | word          |
