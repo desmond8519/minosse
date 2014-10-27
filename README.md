@@ -26,8 +26,8 @@ Supports the same interface as the setting rule above.
 
 ## Http steps
 For making http requests.
-You can use the property steps to set the `request body` property or check the
-`response body` property.
+You can use the property steps to set the `request body` property, check the
+`response body` property or setting the `request headers`.
 
 <hr>
 ##### `foo is used as request body`
@@ -50,6 +50,11 @@ It is also possible to provide a full path (don't forget the protocol):
 <hr>
 ##### `the reponse status code is 200`
 Check the status code of the response.
+
+<hr>
+/^i set the request header (\S+) with value (\S+)$/
+##### `then i set the request header tenant with value foomart`
+Set `tenant` request header to `foomart`.
 
 ## Debug steps
 For debugging features.
