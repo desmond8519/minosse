@@ -68,6 +68,8 @@ Prints the selected property to the console between the test results.
 You can also add `the`:
 
     DEBUG I print the request body
+    DEBUG I print the request headers
+    DEBUG I print the response body
 
 <hr>
 ##### `DEBUG I eval console.log(this.testConfig);`
