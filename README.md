@@ -24,6 +24,10 @@ Examples of this call:
 Assert that `bar.foo` equals `bla`.
 Supports the same interface as the setting rule above.
 
+<hr>
+##### `set property foo of bar with an uniqueid`
+Sets the property `bar.foo` with an unique id
+
 ## Http steps
 For making http requests.
 You can use the property steps to set the `request body` property, check the
