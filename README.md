@@ -52,7 +52,6 @@ It is also possible to provide a full path (don't forget the protocol):
 Check the status code of the response.
 
 <hr>
-/^i set the request header (\S+) with value (\S+)$/
 ##### `then i set the request header tenant with value foomart`
 Set `tenant` request header to `foomart`.
 
