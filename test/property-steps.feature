@@ -52,6 +52,11 @@ Feature: setting and checking properties
             | foo           | bar       | null      |
             | foo           | bar       | undefined |
 
+    Scenario: Setting a property to the value of another property
+        Given property foo of bar is bool true
+        When property foo2 of bar copies property foo of bar
+        Then check property foo2 of bar is bool true
+
     Scenario: Loading testdata from file
         Given testDataRoot path is configured
         When testdata foo is stored as bar
