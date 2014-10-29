@@ -38,6 +38,10 @@ You can use the property steps to set the `request body` property, check the
 Sets the property `Foo` as the request body.
 
 <hr>
+##### `foo is used as request headers`
+Sets the property `Foo` as the request headers.
+
+<hr>
 ##### `response body is stored as foo`
 Sets `foo` to the response body.
 
