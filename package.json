@@ -28,6 +28,7 @@
     "run-sequence": "^0.3.7"
   },
   "dependencies": {
+    "bunyan": "^1.2.1",
     "moment": "^2.8.3",
     "node-uuid": "^1.4.1",
     "request": "^2.44.0"
