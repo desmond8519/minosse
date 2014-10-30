@@ -28,6 +28,10 @@ Supports the same interface as the setting rule above.
 ##### `i set property foo of bar with an uniqueid`
 Sets the property `bar.foo` with an unique id
 
+<hr>
+##### `i remove property foo of bar`
+Removes the property `bar.foo`
+
 ## Http steps
 For making http requests.
 You can use the property steps to set the `request body` property, check the
