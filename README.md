@@ -25,11 +25,11 @@ Assert that `bar.foo` equals `bla`.
 Supports the same interface as the setting rule above.
 
 <hr>
-##### `i set property foo of bar with an uniqueid`
-Sets the property `bar.foo` with an unique id
+##### `I set property foo of bar with a unique id`
+Sets the property `bar.foo` with a unique id
 
 <hr>
-##### `i remove property foo of bar`
+##### `I remove property foo of bar`
 Removes the property `bar.foo`
 
 ## Http steps
@@ -50,7 +50,7 @@ Sets the property `Foo` as the request headers.
 Sets `foo` to the response body.
 
 <hr>
-##### `send a POST request to /foo`
+##### `I send a POST request to /foo`
 Make a request to an endpoint.
 If only a path is provided, host and port are retrieved from
 `testConfig.defaultHost` and `testConfig.defaultPort` respectively, or, if those
@@ -64,8 +64,12 @@ It is also possible to provide a full path (don't forget the protocol):
 Check the status code of the response.
 
 <hr>
-##### `then i set the request header tenant with value foomart`
+##### `I set the request header tenant with value foomart`
 Set `tenant` request header to `foomart`.
+
+<hr>
+##### `property foo of bar copies property test of ice`
+Set `bar.foo` to the value of `ice.test`.
 
 ## Debug steps
 For debugging features.
