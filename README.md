@@ -32,6 +32,10 @@ Sets the property `bar.foo` with a unique id
 ##### `I remove property foo of bar`
 Removes the property `bar.foo`
 
+<hr>
+##### `property foo of bar copies property test of ice`
+Set `bar.foo` to the value of `ice.test`.
+
 ## Http steps
 For making http requests.
 You can use the property steps to set the `request body` property, check the
@@ -66,10 +70,6 @@ Check the status code of the response.
 <hr>
 ##### `I set the request header tenant with value foomart`
 Set `tenant` request header to `foomart`.
-
-<hr>
-##### `property foo of bar copies property test of ice`
-Set `bar.foo` to the value of `ice.test`.
 
 ## Debug steps
 For debugging features.
