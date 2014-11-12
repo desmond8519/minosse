@@ -33,8 +33,12 @@ Sets the property `bar.foo` with a unique id
 Removes the property `bar.foo`
 
 <hr>
-##### `property foo of bar copies property test of ice`
+##### **DEPRECATED** `property foo of bar copies property test of ice`
 Set `bar.foo` to the value of `ice.test`.
+
+Instead of using this step, you can now use the ordinary get and set methods:
+
+    property foo of bar is property apple of fruit
 
 ## Http steps
 For making http requests.

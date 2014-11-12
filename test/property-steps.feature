@@ -42,6 +42,15 @@ Feature: setting and checking properties
             | foo.array.[1] | bar       | string            | word          |
             | foo           | bar space | string            | word          |
 
+    Scenario: Comparing if two attributes are equal
+        When property apple is number 42
+        And property foo of bar is property apple
+        Then check property foo of bar is property apple
+
+    Scenario: Comparing if two attributes are equal
+        When property apple of fruit is number 42
+        And property foo of bar is property apple of fruit
+        Then check property foo of bar is property apple of fruit
 
     Scenario Outline: Setting and checking  null and undefined
         When property <property> of <item> is <type>
