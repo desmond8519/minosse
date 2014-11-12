@@ -70,3 +70,7 @@ Feature: setting and checking properties
         Given testDataRoot path is configured
         When testdata foo is stored as bar
         Then property nr of bar is number 42
+
+    Scenario: Checking the type of a property.
+        Given property foo is string bar
+        Then check property foo has type string

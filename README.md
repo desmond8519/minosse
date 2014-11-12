@@ -25,6 +25,11 @@ Assert that `bar.foo` equals `bla`.
 Supports the same interface as the setting rule above.
 
 <hr>
+##### `check property foo of bar has type string`
+Assert that `typeof bar.foo` equals `string`.
+Supports the same interface as the rules above.
+
+<hr>
 ##### `I set property foo of bar with a unique id`
 Sets the property `bar.foo` with a unique id
 
