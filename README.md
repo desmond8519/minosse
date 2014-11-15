@@ -88,17 +88,17 @@ Set `tenant` request header to `foomart`.
 For debugging features.
 
 <hr>
-##### `DEBUG I print foo`
+##### `DEBUG I print property foo`
 Prints the selected property to the console between the test results.
-You can also add `the`:
-
-    DEBUG I print the request body
-    DEBUG I print the request headers
-    DEBUG I print the response body
 
 <hr>
 ##### `DEBUG I eval console.log(this.testConfig);`
 Evaluate any javascript expression with the world object as value for `this`.
+
+You can perform assertions to build quick placeholder test-steps.
+For instance, the following step will fail if `this.foo` does not equal `bar`.
+
+    DEBUG I eval assert(this.foo === 'bar')
 
 ## Development
 
