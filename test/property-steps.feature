@@ -66,9 +66,14 @@ Feature: setting and checking properties
         When property foo2 of bar copies property foo of bar
         Then check property foo2 of bar is bool true
 
-    Scenario: Loading testdata from file
+    Scenario: Loading testdata from file [DEPRECATED]
         Given testDataRoot path is configured
         When testdata foo is stored as bar
+        Then property nr of bar is number 42
+
+    Scenario: Loading testdata from file
+        Given testDataRoot path is configured
+        When property foo is testdata foo
         Then property nr of bar is number 42
 
     Scenario: Checking the type of a property.

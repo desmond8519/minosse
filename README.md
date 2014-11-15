@@ -6,12 +6,6 @@ This modules steps are split into three categories:
 For setting and checking properties on objects.
 
 <hr>
-##### `testdata foo is stored as bar`
-Loads data from a `testdata.json` file and stores it on the property `bar`.
-`testdata.json` is looked up in `testConfig.testDataRoot` of it is defined,
-or the current working directory otherwise.
-
-<hr>
 ##### `property foo of bar is string bla`
 Set `bar.foo` to `bla`.
 Examples of this call:
@@ -32,6 +26,16 @@ Supports the same interface as the rules above.
 <hr>
 ##### `I remove property foo of bar`
 Removes the property `bar.foo`
+
+<hr>
+##### **DEPRECATED** `testdata foo is stored as bar`
+Loads data from a `testdata.json` file and stores it on the property `bar`.
+`testdata.json` is looked up in `testConfig.testDataRoot` of it is defined,
+or the current working directory otherwise.
+
+Instead of using this step, you can use an ordinary get:
+
+    property bar is testdata foo
 
 <hr>
 ##### **DEPRECATED** `I set property foo of bar with a unique id`
