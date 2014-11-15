@@ -37,7 +37,7 @@ Removes the property `bar.foo`
 ##### **DEPRECATED** `I set property foo of bar with a unique id`
 Sets the property `bar.foo` with a unique id
 
-Instead of using this step, you can use an ordinary get:
+Instead of using this step, you can use an ordinary set:
 
     property foo of bar is uuid()
 
