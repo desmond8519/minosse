@@ -74,3 +74,7 @@ Feature: setting and checking properties
     Scenario: Checking the type of a property.
         Given property foo is string bar
         Then check property foo has type string
+
+    Scenario: Setting a property to a uuid
+        When property foo is uuid()
+        Then check property foo has type string

@@ -30,12 +30,16 @@ Assert that `typeof bar.foo` equals `string`.
 Supports the same interface as the rules above.
 
 <hr>
-##### `I set property foo of bar with a unique id`
-Sets the property `bar.foo` with a unique id
-
-<hr>
 ##### `I remove property foo of bar`
 Removes the property `bar.foo`
+
+<hr>
+##### **DEPRECATED** `I set property foo of bar with a unique id`
+Sets the property `bar.foo` with a unique id
+
+Instead of using this step, you can use an ordinary get:
+
+    property foo of bar is uuid()
 
 <hr>
 ##### **DEPRECATED** `property foo of bar copies property test of ice`
