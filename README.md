@@ -11,7 +11,7 @@ Set `bar.foo` to `bla`.
 Examples of this call:
 
     property foo.subfoo of bar is number 4
-    property fooArray.[3] of bar is null
+    property fooArray[3] of bar is null
 
 <hr>
 ##### `check property foo of bar is string bla`

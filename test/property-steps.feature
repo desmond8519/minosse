@@ -19,6 +19,7 @@ Feature: setting and checking properties
             | foo           | dateISOString     | 01/11/1989    |
             | foo.chain     | string            | word          |
             | foo.array.[1] | string            | word          |
+            | foo.array[1]  | string            | word          |
             | foo           | string            | word          |
 
     Scenario Outline: Setting and checking a property
@@ -39,7 +40,7 @@ Feature: setting and checking properties
             | foo           | bar       | date              | 01/11/1989    |
             | foo           | bar       | dateISOString     | 01/11/1989    |
             | foo.chain     | bar       | string            | word          |
-            | foo.array.[1] | bar       | string            | word          |
+            | foo.array[1]  | bar       | string            | word          |
             | foo           | bar space | string            | word          |
 
     Scenario: Comparing if two attributes are equal
