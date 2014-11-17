@@ -112,39 +112,51 @@ Commands that set or check properties take a property in the format `property <t
 The type determines how the value is parsed.
 Some types do not require a value.
 
+<hr>
 ##### `string <value>`
 
+<hr>
 ##### `int <value>`
 
+<hr>
 ##### `float <value>` (alias: number)
 
+<hr>
 ##### `boolean <value>` (alias: bool)
 
+<hr>
 ##### `undefined`
 
+<hr>
 ##### `null`
 
+<hr>
 ##### `object <value>`
 Parses the value string as JSON.
 
+<hr>
 ##### `date <value>`
 Parses `value` into a javascript date object.
 You can provide any value that is succesfully parsd by the `Date` constructor or the special values
 `now`, `<number> days ago` or `<number> days from now`.
 
+<hr>
 ##### `dateISOString <value>`
 Parses `value` into an ISO8601 string.
 Takes the same values as the `date` type.
 
+<hr>
 ##### `property <value>`
 Copies the value of another property.
 You can provide any valid property selector, like `foo of bar` or `bar.foo[4]`.
 
+<hr>
 ##### `testdata <value>`
 Loads data from a `<value>.json` file and stores it on the property `bar`.
 `testdata.json` is looked up in `testConfig.testDataRoot` of it is defined,
 or the current working directory otherwise.
 
+<hr>
 ##### `uuid()`
 Generates a uuid and and uses that as value.
 Beware: you cannot use this type to check if a value is a uuid.
