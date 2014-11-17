@@ -177,7 +177,7 @@ Consider the example that adds a type for binary numbers.
 
 ```js
 function myTestSteps() {
-    this.World.prototype.parsers['binary-number'] = function parseReverseString(valueString) {
+    this.World.prototype.parsers['binary-number'] = function(valueString) {
         return parseInt(valueString, 2);
     }
 }
