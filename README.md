@@ -1,5 +1,5 @@
 # cucumberjs-api-teststeps
-Common steps for testing api's using [Cucumber.js](https://github.com/cucumber/cucumber-js)
+Common steps for testing api's using [Cucumber.js](https://github.com/cucumber/cucumber-js).
 
 ## Usage
 Install the library:
