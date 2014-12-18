@@ -27,9 +27,9 @@ And property sum of response body is number 6
 
 ### What's next?
 ## Contents
-- [Check out which test steps you can use](wiki/Steps)
-- [Save the log output of the steps](wiki/Logging)
-- [Create custom steps](wiki/Custom-steps)
+- [Check out which test steps you can use](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Steps)
+- [Save the log output of the steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Logging)
+- [Create custom steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Custom-steps)
 
 ## Development
 
