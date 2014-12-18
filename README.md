@@ -1,6 +1,5 @@
 # cucumberjs-api-teststeps
-Common test steps for testing api's.
-This modules steps are split into three categories:
+Common steps for testing api's using [Cucumber.js](https://github.com/cucumber/cucumber-js)
 
 ## Usage
 Install the library:
