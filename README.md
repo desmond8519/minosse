@@ -20,6 +20,7 @@ module.exports = function myCustomSteps() {
 Use the steps in your feature file
 ```cucumber
 Given property numbers is number-array 1,2,3
+And numbers is used as request body
 When I send a POST request to /sum
 Then the response status code is 200
 And property sum of response body is number 6
