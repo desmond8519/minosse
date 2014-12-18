@@ -16,7 +16,7 @@ module.exports = function myCustomSteps() {
     };
 }
 ```
-Use the steps in your feature file
+Use the steps in your feature file:
 ```cucumber
 Given property numbers is number-array 1,2,3
 And numbers is used as request body
@@ -26,7 +26,6 @@ And property sum of response body is number 6
 ```
 
 ### What's next?
-## Contents
 - [Check out which test steps you can use](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Steps)
 - [Save the log output of the steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Logging)
 - [Create custom steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Custom-steps)
