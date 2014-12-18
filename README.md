@@ -25,6 +25,12 @@ Then the response status code is 200
 And property sum of response body is number 6
 ```
 
+### What's next?
+## Contents
+- [Check out which test steps you can use](wiki/Steps)
+- [Save the log output of the steps](wiki/Logging)
+- [Create custom steps](wiki/Custom-steps)
+
 ## Development
 
 ### Style
