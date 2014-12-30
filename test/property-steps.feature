@@ -87,3 +87,19 @@ Feature: setting and checking properties
         When I set property foo to uuid()
         And I set property bar to uuid()
         Then [TEST] I assert properties foo and bar are not the same
+
+    Scenario: Setting a date to now
+        When I set property foo to date now
+        Then [TEST] value of foo is date 0 days from now
+
+    Scenario: Setting a relative date in the future
+        When I set property foo to date 3 days from now
+        Then [TEST] value of foo is date 3 days from now
+
+    Scenario: Setting a relative date in the past
+        When I set property foo to date 3 days ago
+        Then [TEST] value of foo is date -3 days from now
+
+    Scenario: Setting a date using an ISO string
+        When I set property foo to dateISOString 1989-10-31T23:00:00.000Z
+        Then [TEST] I assert property foo equals '1989-10-31T23:00:00.000Z'
