@@ -1,14 +1,13 @@
 var exec = require('child_process').exec;
 var gulp = require('gulp');
+var eslint = require('gulp-eslint');
 var runSequence = require('run-sequence');
-var jshint = require('gulp-jshint');
 var minimist = require('minimist');
 var _ = require('lodash');
 
 var argv = minimist(process.argv.slice(2));
 
 require('gulp-help')(gulp);
-require('jshint-stylish');
 
 gulp.task('test', 'Run all tests.', function(cb) {
     runSequence('lint',
@@ -42,7 +41,7 @@ gulp.task('test-cucumber', 'Run cucumber integration tests.', function(cb) {
 
 gulp.task('lint', 'Lint all js files.', function() {
     return gulp.src(['./**/*.js', '!./node_modules/**/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'));
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
 });

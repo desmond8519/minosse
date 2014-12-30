@@ -8,24 +8,26 @@ module.exports = function propertyStepsSteps() {
         done();
     });
 
+    /* eslint-disable no-eval */
     this.Given(/^\[TEST\] I assert property (.+) equals (.+)$/, function(key, value, done) {
-        var actual = eval('this.' + key); //jshint ignore:line
-        var expected = eval('test = ' + value); //jshint ignore:line
+        var actual = eval('this.' + key);
+        var expected = eval('test = ' + value);
         assert.deepEqual(expected, actual);
         done();
     });
 
     this.Given(/^\[TEST\] I set (.+) to (.+)$/, function(key, value, done) {
         var evalString = format('this.%s = %s', key, value);
-        eval(evalString); //jshint ignore:line
+        eval(evalString);
         done();
     });
 
     this.Given(/^\[TEST\] I assert properties (.+) and (.+) are not the same$/,
                function(key1, key2, done) {
-        var value1 = eval('this.' + key1); //jshint ignore:line
-        var value2 = eval('this.' + key2); //jshint ignore:line
+        var value1 = eval('this.' + key1);
+        var value2 = eval('this.' + key2);
         assert.notDeepEqual(value1, value2);
         done();
     });
+    /* eslint-enable */
 };
