@@ -22,6 +22,8 @@ lib-cov
 
 # Build files
 build
+coverage
+istanbul-instrumented-lib.tmp
 
 #node.js
 pids
