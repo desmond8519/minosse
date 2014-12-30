@@ -38,3 +38,9 @@ Feature: making http requests
         When I send a POST request to /foo
         Then the response status code is 200
         And I check property test-foo of response headers equals string bar
+
+    Scenario: I want to make a request with a specific header
+        Given I set the request header test-foo with value bar
+        When I send a POST request to /foo
+        Then the response status code is 200
+        And I check property test-foo of response headers equals string bar

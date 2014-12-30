@@ -103,3 +103,8 @@ Feature: setting and checking properties
     Scenario: Setting a date using an ISO string
         When I set property foo to dateISOString 1989-10-31T23:00:00.000Z
         Then [TEST] I assert property foo equals '1989-10-31T23:00:00.000Z'
+
+    Scenario: Removing a property
+        Given [TEST] I set foo to 42
+        When I remove property foo
+        Then [TEST] I assert property foo equals undefined
