@@ -1,8 +1,8 @@
 Feature: setting and checking properties
 
     Scenario Outline: Setting and checking a root property
-        When property <property> is <type> <value>
-        Then check property <property> is <type> <value>
+        When I set property <property> to <type> <value>
+        Then I check property <property> equals <type> <value>
 
         Examples:
             | property      | type              | value         |
@@ -23,8 +23,8 @@ Feature: setting and checking properties
             | foo           | string            | word          |
 
     Scenario Outline: Setting and checking a property
-        When property <property> of <item> is <type> <value>
-        Then check property <property> of <item> is <type> <value>
+        When I set property <property> of <item> to <type> <value>
+        Then I check property <property> of <item> equals <type> <value>
 
         Examples:
             | property      | item      | type              | value         |
@@ -44,43 +44,33 @@ Feature: setting and checking properties
             | foo           | bar space | string            | word          |
 
     Scenario: Comparing if two attributes are equal
-        When property apple is number 42
-        And property foo of bar is property apple
-        Then check property foo of bar is property apple
+        When I set property apple to number 42
+        And I set property foo of bar to property apple
+        Then I check property foo of bar equals property apple
 
     Scenario: Comparing if two attributes are equal
-        When property apple of fruit is number 42
-        And property foo of bar is property apple of fruit
-        Then check property foo of bar is property apple of fruit
+        When I set property apple of fruit to number 42
+        And I set property foo of bar to property apple of fruit
+        Then I check property foo of bar equals property apple of fruit
 
-    Scenario Outline: Setting and checking  null and undefined
-        When property <property> of <item> is <type>
-        Then check property <property> of <item> is <type>
+    Scenario Outline: Setting and checking null and undefined
+        When I set property <property> of <item> to <type>
+        Then I check property <property> of <item> equals <type>
 
         Examples:
             | property      | item      | type      |
             | foo           | bar       | null      |
             | foo           | bar       | undefined |
 
-    Scenario: Setting a property to the value of another property
-        Given property foo of bar is bool true
-        When property foo2 of bar copies property foo of bar
-        Then check property foo2 of bar is bool true
-
-    Scenario: Loading testdata from file [DEPRECATED]
-        Given testDataRoot path is configured
-        When testdata foo is stored as bar
-        Then property nr of bar is number 42
-
     Scenario: Loading testdata from file
         Given testDataRoot path is configured
-        When property foo is testdata foo
-        Then property nr of bar is number 42
+        When I set property foo to testdata foo
+        Then I check property nr of foo equals number 42
 
     Scenario: Checking the type of a property.
-        Given property foo is string bar
-        Then check property foo has type string
+        Given I set property foo to string bar
+        Then I check property foo has type string
 
     Scenario: Setting a property to a uuid
-        When property foo is uuid()
-        Then check property foo has type string
+        When I set property foo to uuid()
+        Then I check property foo has type string
