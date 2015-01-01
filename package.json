@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/icemobilelab/cucumberjs-api-teststeps",
   "devDependencies": {
-    "bunyan": "^1.2.1",
     "cucumber": "^0.4.4",
     "eslint-plugin-nodeca": "^1.0.3",
     "gulp": "^3.8.8",
