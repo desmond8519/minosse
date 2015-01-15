@@ -17,7 +17,6 @@ Feature: setting and checking properties
             | foo          | object        | { "nr": 42 }  | { 'nr': 42 }               |
             | foo          | string-array  | one,two,three | ['one', 'two', 'three']    |
             | foo          | number-array  | 1,2,3         | [1, 2, 3]                  |
-            | foo          | dateISOString | 11/01/1989    | '1989-10-31T23:00:00.000Z' |
             | foo.chain    | string        | word          | 'word'                     |
             | foo.array[1] | string        | word          | 'word'                     |
 
@@ -49,7 +48,6 @@ Feature: setting and checking properties
             | foo          | { 'nr': 42 }               | object        | { "nr": 42 }   |
             | foo          | ['one', 'two', 'three']    | string-array  | one,two,three  |
             | foo          | [1, 2, 3]                  | number-array  | 1,2,3          |
-            | foo          | '1989-10-31T23:00:00.000Z' | dateISOString | 11/01/1989     |
 
     Scenario: Checking a nested property
         When [TEST] I set foo to { list: [1, 2, 3] }
