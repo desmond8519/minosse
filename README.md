@@ -50,3 +50,6 @@ In the `package.json` you can see a pre-commit and pre-push hook.
 On commiting or pushing these commands are executed.
 If they fail, the commit/push will fail.
 Add the `--no-verify` flag to your commit or push to bypass these checks.
+
+## Swag
+[![wercker status](https://app.wercker.com/status/3c834f31d67bc0b89052b3e255da2462/m "wercker status")](https://app.wercker.com/project/bykey/3c834f31d67bc0b89052b3e255da2462)
