@@ -1,86 +1,108 @@
 Feature: setting and checking properties
+    # We are testing cucumber steps here.
+    # Steps prefixed with [TEST] are not under test themselves, but support the tests of others.
 
-    Scenario Outline: Setting and checking a root property
-        When property <property> is <type> <value>
-        Then check property <property> is <type> <value>
-
-        Examples:
-            | property      | type              | value         |
-            | foo           | string            | word          |
-            | foo           | number            | 4.3           |
-            | foo           | float             | 4.3           |
-            | foo           | int               | 4             |
-            | foo           | boolean           | true          |
-            | foo           | bool              | true          |
-            | foo           | object            | { "nr": 42 }  |
-            | foo           | string-array      | one,two,three |
-            | foo           | number-array      | 1,2,3         |
-            | foo           | date              | 01/11/1989    |
-            | foo           | dateISOString     | 01/11/1989    |
-            | foo.chain     | string            | word          |
-            | foo.array.[1] | string            | word          |
-            | foo.array[1]  | string            | word          |
-            | foo           | string            | word          |
-
-    Scenario Outline: Setting and checking a property
-        When property <property> of <item> is <type> <value>
-        Then check property <property> of <item> is <type> <value>
+    Scenario Outline: Setting a property
+        When I set property <property> to <type> <value>
+        Then [TEST] I assert property <property> equals <result>
 
         Examples:
-            | property      | item      | type              | value         |
-            | foo           | bar       | string            | word          |
-            | foo           | bar       | number            | 4.3           |
-            | foo           | bar       | float             | 4.3           |
-            | foo           | bar       | int               | 4             |
-            | foo           | bar       | boolean           | true          |
-            | foo           | bar       | bool              | true          |
-            | foo           | bar       | object            | { "nr": 42 }  |
-            | foo           | bar       | string-array      | one,two,three |
-            | foo           | bar       | number-array      | 1,2,3         |
-            | foo           | bar       | date              | 01/11/1989    |
-            | foo           | bar       | dateISOString     | 01/11/1989    |
-            | foo.chain     | bar       | string            | word          |
-            | foo.array[1]  | bar       | string            | word          |
-            | foo           | bar space | string            | word          |
+            | property     | type          | value         | result                     |
+            | foo          | string        | word          | 'word'                     |
+            | foo          | number        | 4.3           | 4.3                        |
+            | foo          | float         | 4.3           | 4.3                        |
+            | foo          | int           | 4             | 4                          |
+            | foo          | boolean       | true          | true                       |
+            | foo          | bool          | true          | true                       |
+            | foo          | object        | { "nr": 42 }  | { 'nr': 42 }               |
+            | foo          | string-array  | one,two,three | ['one', 'two', 'three']    |
+            | foo          | number-array  | 1,2,3         | [1, 2, 3]                  |
+            | foo.chain    | string        | word          | 'word'                     |
+            | foo.array[1] | string        | word          | 'word'                     |
 
-    Scenario: Comparing if two attributes are equal
-        When property apple is number 42
-        And property foo of bar is property apple
-        Then check property foo of bar is property apple
+    Scenario: Setting a property of a subproperty
+        When I set property foo of bar to number 42
+        Then [TEST] I assert property bar.foo equals 42
 
-    Scenario: Comparing if two attributes are equal
-        When property apple of fruit is number 42
-        And property foo of bar is property apple of fruit
-        Then check property foo of bar is property apple of fruit
-
-    Scenario Outline: Setting and checking  null and undefined
-        When property <property> of <item> is <type>
-        Then check property <property> of <item> is <type>
+    Scenario Outline: Setting a property to null and undefined
+        When I set property <property> to <value>
+        Then [TEST] I assert property <property> equals <value>
 
         Examples:
-            | property      | item      | type      |
-            | foo           | bar       | null      |
-            | foo           | bar       | undefined |
+            | property | value     |
+            | foo      | null      |
+            | foo      | undefined |
+
+    Scenario Outline: Checking a property
+        When [TEST] I set <property> to <actual value>
+        Then I check property <property> equals <expected type> <expected value>
+
+        Examples:
+            | property     | actual value               | expected type | expected value |
+            | foo          | 'word'                     | string        | word           |
+            | foo          | 4.3                        | number        | 4.3            |
+            | foo          | 4.3                        | float         | 4.3            |
+            | foo          | 4                          | int           | 4              |
+            | foo          | true                       | boolean       | true           |
+            | foo          | true                       | bool          | true           |
+            | foo          | { 'nr': 42 }               | object        | { "nr": 42 }   |
+            | foo          | ['one', 'two', 'three']    | string-array  | one,two,three  |
+            | foo          | [1, 2, 3]                  | number-array  | 1,2,3          |
+
+    Scenario: Checking a nested property
+        When [TEST] I set foo to { list: [1, 2, 3] }
+        Then I check property foo.list[1] equals number 2
+
+    Scenario Outline: Checking a property equals null or undefined
+        When [TEST] I set <property> to <value>
+        Then I check property <property> equals <value>
+
+        Examples:
+            | property | value     |
+            | foo      | null      |
+            | foo      | undefined |
 
     Scenario: Setting a property to the value of another property
-        Given property foo of bar is bool true
-        When property foo2 of bar copies property foo of bar
-        Then check property foo2 of bar is bool true
+        Given [TEST] I set bar to 42
+        When I set property foo to property bar
+        Then [TEST] I assert property foo equals 42
 
-    Scenario: Loading testdata from file [DEPRECATED]
-        Given testDataRoot path is configured
-        When testdata foo is stored as bar
-        Then property nr of bar is number 42
+    Scenario: Comparing if two attributes are equal
+        When [TEST] I set bar to 42
+        And [TEST] I set foo to 42
+        Then I check property foo equals property bar
 
     Scenario: Loading testdata from file
-        Given testDataRoot path is configured
-        When property foo is testdata foo
-        Then property nr of bar is number 42
+        Given [TEST] testDataRoot path is configured
+        When I set property foo to testdata foo
+        Then [TEST] I assert property foo.nr equals 42
 
     Scenario: Checking the type of a property.
-        Given property foo is string bar
-        Then check property foo has type string
+        When [TEST] I set foo to 'bar'
+        Then I check property foo has type string
 
     Scenario: Setting a property to a uuid
-        When property foo is uuid()
-        Then check property foo has type string
+        When I set property foo to uuid()
+        And I set property bar to uuid()
+        Then [TEST] I assert properties foo and bar are not the same
+
+    Scenario: Setting a date to now
+        When I set property foo to date now
+        Then [TEST] value of foo is date 0 days from now
+
+    Scenario: Setting a relative date in the future
+        When I set property foo to date 3 days from now
+        Then [TEST] value of foo is date 3 days from now
+
+    Scenario: Setting a relative date in the past
+        When I set property foo to date 3 days ago
+        Then [TEST] value of foo is date -3 days from now
+
+    Scenario: Setting a date using an ISO string
+        When I set property foo to dateISOString 1989-10-31T23:00:00.000Z
+        Then [TEST] I assert property foo equals '1989-10-31T23:00:00.000Z'
+
+    Scenario: Removing a property
+        Given [TEST] I set foo to 42
+        When I remove property foo
+        Then [TEST] I assert property foo equals undefined
