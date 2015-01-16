@@ -9,6 +9,7 @@ Feature: setting and checking properties
         Examples:
             | property     | type          | value         | result                     |
             | foo          | string        | word          | 'word'                     |
+            | foo          | string        |               | ''                         |
             | foo          | number        | 4.3           | 4.3                        |
             | foo          | float         | 4.3           | 4.3                        |
             | foo          | int           | 4             | 4                          |
@@ -40,6 +41,7 @@ Feature: setting and checking properties
         Examples:
             | property     | actual value               | expected type | expected value |
             | foo          | 'word'                     | string        | word           |
+            | foo          | ''                         | string        |                |
             | foo          | 4.3                        | number        | 4.3            |
             | foo          | 4.3                        | float         | 4.3            |
             | foo          | 4                          | int           | 4              |
