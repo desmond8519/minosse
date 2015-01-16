@@ -36,8 +36,8 @@ And property sum of response body is number 6
 We have an `.editorconfig` file to help us having a consistent coding style.
 [Please install a plugin for your editor](http://editorconfig.org/).
 
-We use `jshint` for code linting.
-[There are plugins for that too](http://www.jshint.com/install/).
+We use `eslint` for code linting.
+[There are plugins for that too](http://eslint.org/docs/integrations/).
 
 ### Tasks
 We use gulp as a task runner. Install it globally first: `npm install -g gulp`.
