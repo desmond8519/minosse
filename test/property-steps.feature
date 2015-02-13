@@ -2,6 +2,7 @@ Feature: setting and checking properties
     # We are testing cucumber steps here.
     # Steps prefixed with [TEST] are not under test themselves, but support the tests of others.
 
+    @only
     Scenario Outline: Setting a property
         When I set property <property> to <type> <value>
         Then [TEST] I assert property <property> equals <result>
