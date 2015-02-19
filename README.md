@@ -9,11 +9,14 @@ npm install cucumberjs-api-teststeps --save-dev
 Create a steps file in your project and load the api teststeps from there and add an optional configuration:
 ```js
 module.exports = function myCustomSteps() {
-    require('cucumerjs-api-teststeps').call(this);
-    this.testConfig = {
-        defaultHost: 'localhost',
-        defaultPort: 8080
-    };
+    require('cucumberjs-api-teststeps').call(this);
+    this.Before(function loadTestConfig(done) {
+        this.testConfig = {
+            defaultHost: 'localhost',
+            defaultPort: 8080
+        };
+        done();
+    });
 }
 ```
 Use the steps in your feature file:
