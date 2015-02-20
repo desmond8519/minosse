@@ -108,7 +108,7 @@ Feature: setting and checking properties
         Given [TEST] I set foo to 42
         When I remove property foo
         Then [TEST] I assert property foo equals undefined
-@test
+
     Scenario: Comparing if two attributes are not equal
             When [TEST] I set bar to 43
             And [TEST] I set foo to 42
