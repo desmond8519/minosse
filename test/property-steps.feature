@@ -112,4 +112,4 @@ Feature: setting and checking properties
     Scenario: Comparing if two attributes are not equal
             When [TEST] I set bar to 43
             And [TEST] I set foo to 42
-            Then I check property foo is not equals property bar
+            Then I check property foo does not equals property bar
