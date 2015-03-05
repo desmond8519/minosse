@@ -1,15 +1,15 @@
-# cucumberjs-api-teststeps
+# minosse
 Common steps for testing api's using [Cucumber.js](https://github.com/cucumber/cucumber-js).
 
 ## Usage
 Install the library:
 ```
-npm install cucumberjs-api-teststeps --save-dev
+npm install minosse --save-dev
 ```
 Create a steps file in your project and load the api teststeps from there and add an optional configuration:
 ```js
 module.exports = function myCustomSteps() {
-    require('cucumberjs-api-teststeps').call(this);
+    require('minosse').call(this);
     this.Before(function loadTestConfig(done) {
         this.testConfig = {
             defaultHost: 'localhost',
@@ -28,9 +28,9 @@ And I check property sum of response body equals number 6
 ```
 
 ### What's next?
-- [Check out which test steps you can use](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Steps)
-- [Save the log output of the steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Logging)
-- [Create custom steps](https://github.com/icemobilelab/cucumberjs-api-teststeps/wiki/Custom-steps)
+- [Check out which test steps you can use](https://github.com/icemobilelab/minosse/wiki/Steps)
+- [Save the log output of the steps](https://github.com/icemobilelab/minosse/wiki/Logging)
+- [Create custom steps](https://github.com/icemobilelab/minosse/wiki/Custom-steps)
 
 ## Development
 

@@ -1,5 +1,5 @@
 {
-  "name": "cucumberjs-api-teststeps",
+  "name": "minosse",
   "version": "0.1.4",
   "description": "Common test steps for testing api's.",
   "main": "lib/steps.js",
@@ -10,14 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:icemobilelab/cucumberjs-api-teststeps.git"
+    "url": "git@github.com:icemobilelab/minosse.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/icemobilelab/cucumberjs-api-teststeps/issues"
+    "url": "https://github.com/icemobilelab/minosse/issues"
   },
-  "homepage": "https://github.com/icemobilelab/cucumberjs-api-teststeps",
+  "homepage": "https://github.com/icemobilelab/minosse",
   "devDependencies": {
     "cucumber": "^0.4.7",
     "gulp": "^3.8.8",
