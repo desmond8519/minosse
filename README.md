@@ -54,4 +54,4 @@ If they fail, the commit/push will fail.
 Add the `--no-verify` flag to your commit or push to bypass these checks.
 
 ## Swag
-[![wercker status](https://app.wercker.com/status/3c834f31d67bc0b89052b3e255da2462/m "wercker status")](https://app.wercker.com/project/bykey/3c834f31d67bc0b89052b3e255da2462)
+[![wercker status](https://app.wercker.com/status/f0c2295b27704388dabc1ade1a60b932/m/master "wercker status")](https://app.wercker.com/project/bykey/f0c2295b27704388dabc1ade1a60b932)
