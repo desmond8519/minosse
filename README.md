@@ -1,4 +1,6 @@
-# minosse
+<a href="https://github.com/icemobilelab/minosse"><img src="https://raw.githubusercontent.com/icemobilelab/minosse/master/images/minosse.png" align="center"  height="300" width="600"/></a>
+
+# Minosse
 Common steps for testing api's using [Cucumber.js](https://github.com/cucumber/cucumber-js).
 
 ## Usage
